@@ -1,7 +1,73 @@
-body,
-html {
-  /* height:100%; */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  margin: 0px;
-  padding: 0px;
+/* Define the overall layout of the page using CSS Grid */
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+    height: 100vh; /* Full height of viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header and Footer styling */
+header, footer {
+    padding: 1rem;
+    background: #333; 
+    color: white;
+    text-align: center;
+}
+
+/* Header specific styling: Flexbox to separate title and navigation */
+header {
+    display: flex;
+    justify-content: space-between; /* Aligns title to left and nav to right */
+    align-items: center; /* Vertically centers elements */
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style: none; /* Remove default list styling */
+    display: flex;
+    gap: 1rem; /* Space between navigation links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Main content area: Grid layout to organize store items */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 items per row */
+    gap: 1rem; /* Space between items */
+    padding: 1rem;
+    max-width: 1200px; 
+    margin: auto; /* Center main content */
+}
+
+/* Styling for individual store items */
+.store-item {
+    border: 1px solid #ddd; 
+    padding: 1rem;
+    text-align: center;
+    background: #f9f9f9; 
+}
+
+/* Ensure product images fit within the store item container */
+.store-item img {
+    max-width: 100%; /* Prevent images from overflowing */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for product details (Rating, Price, Stock) */
+.store-item span {
+    display: inline-block;
+    margin: 0 0.5rem; /* Space between elements */
+    font-weight: bold; 
 }
